@@ -94,3 +94,39 @@ console.log(cookedFood)
 /*Your task is to iterate over the array of foods and invoke the function 
 for each item so that the cookedFood array contains all of the items after they are cooked. */
 
+/* Create an object representing your breakfast.
+Write a function that will accept your breakfast object and 
+return a component. Display the component on the DOM 
+along with your name. You will need index.html and main.js.*/
+
+const breakfast = [
+    {
+    drink: "tea",
+    meat: "none",
+    energy: "larabar",
+    },
+    {
+    drink: "zija",
+    meat: "chicken sausage",
+    energy: "none",
+    }
+]
+
+
+const createBreakfast = (item) => {
+    return ` <div>
+        <h2>${item.drink}</h2>
+        <p>${item.meat}</p>
+        <p>${item.energy}</p>
+    </div>`
+}
+
+console.log(createBreakfast)
+
+const breakfastContainer = document.querySelector("#container")
+
+breakfast.forEach(item => {
+    breakfastContainer.innerHTML += createBreakfast(item);
+});
+
+
